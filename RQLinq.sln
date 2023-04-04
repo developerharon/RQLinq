@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RQLinq", "RQLinq\RQLinq.csproj", "{B5895D91-16A3-4562-A43B-A4DC82753808}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RQLinq.Console", "RQLinq.Console\RQLinq.Console.csproj", "{32549512-B51D-4242-A45A-D0E96639CCCF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5895D91-16A3-4562-A43B-A4DC82753808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5895D91-16A3-4562-A43B-A4DC82753808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5895D91-16A3-4562-A43B-A4DC82753808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5895D91-16A3-4562-A43B-A4DC82753808}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32549512-B51D-4242-A45A-D0E96639CCCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32549512-B51D-4242-A45A-D0E96639CCCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32549512-B51D-4242-A45A-D0E96639CCCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32549512-B51D-4242-A45A-D0E96639CCCF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6126519F-7960-4377-8690-B02670EAD71C}
+	EndGlobalSection
+EndGlobal
