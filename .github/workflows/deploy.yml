@@ -45,6 +45,7 @@ jobs:
           tag: ${{ github.event.inputs.package_version }}
           name: Release ${{ github.event.inputs.package_version }}
           body: ${{ github.event.inputs.package_version }}
+          token: ${{secrets.TOKEN}}
     
   github-publish:
     runs-on: ubuntu-latest
