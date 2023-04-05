@@ -32,25 +32,21 @@ jobs:
       with:
         name: artifacts
         path: RQLinq/artifacts
+  
   release:
-    
-    needs: build
-    
     runs-on: ubuntu-latest
-    
+    needs: build
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Determine version
         run: echo "VERSION=$(git describe --tags --dirty)" >> $GITHUB_ENV
-      - name: Create Release
-        id: create_release
-        uses: ncipollo/release-action@v1.12.0
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
         with:
-          tag: ${{ github.event.inputs.package_version }}
-          name: Release ${{ github.event.inputs.package_version }}
-          body: ${{ github.event.inputs.package_version }}
-          makeLatest: true
+          tag: ${{ env.VERSION }}
+          name: Release ${{ env.VERSION }}
+          body: ${{ env.VERSION }}
     
   github-publish:
     runs-on: ubuntu-latest
