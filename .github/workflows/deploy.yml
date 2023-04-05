@@ -26,7 +26,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack ./RQLinq/EosSharp.csproj -p:PackageOutputPath=./artifacts --configuration Release -p:Version=${{ github.event.inputs.package_version }}
+      run: dotnet pack ./RQLinq/RQLinq.csproj -p:PackageOutputPath=./artifacts --configuration Release -p:Version=${{ github.event.inputs.package_version }}
     - name: Upload package
       uses: actions/upload-artifact@v1
       with:
