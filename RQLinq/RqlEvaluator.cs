@@ -5,7 +5,12 @@ namespace RQLinq
 {
     public class RqlEvaluator
     {
-        private readonly RqlExpressionSyntax _root;
+        private readonly RqlExpressionSyntax? _root;
+
+        public RqlEvaluator()
+        {
+
+        }
 
         public RqlEvaluator(RqlExpressionSyntax root)
         {
@@ -17,6 +22,17 @@ namespace RQLinq
             var parameterExpression = Expression.Parameter(typeof(T), "x");
             var bodyExpression = EvaluateExpressionSyntax<T>(parameterExpression, _root);
             return Expression.Lambda<Func<T, bool>>(bodyExpression, parameterExpression);
+        }
+
+        public static Expression<Func<T, bool>> Evaluate<T>(string text)
+        {
+            var syntaxTree = RqlSyntaxTree.Parse(text);
+
+            if (syntaxTree.Diagnostics.Any())
+                throw new RqlTokenException(syntaxTree.Diagnostics);
+
+            RqlEvaluator evaluator = new RqlEvaluator(syntaxTree.Root);
+            return evaluator.Evaluate<T>();
         }
 
         public static Expression<Func<T, bool>> Evaluate<T>(Dictionary<string, string[]> query)
