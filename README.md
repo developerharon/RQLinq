@@ -11,8 +11,6 @@ C# library that converts RQL (Resource Query Language) to a Func expression that
 
 ## Installation
 
-Install Package
-
 ```
 
 dotnet add package RQLinq --version 0.0.6
